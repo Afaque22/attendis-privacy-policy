@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Attendis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root[data-theme="dark"] {
+      --bg: #1E272E;
+      --surface: #252f37;
+      --border: rgba(144,164,174,0.12);
+      --accent: #90A4AE;
+      --accent-soft: rgba(144,164,174,0.08);
+      --text: #E8ECEF;
+      --muted: #90A4AE;
+      --tag-bg: rgba(144,164,174,0.1);
+      --logo-invert: 0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .nav-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      filter: var(--logo-invert, 0) brightness(1);
+    }
+
+    .nav-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .theme-toggle {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 14px;
+      cursor: pointer;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* HERO */
+    .hero {
+      padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 3rem) clamp(2rem, 5vw, 3rem);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 4px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span { font-weight: 500; color: var(--text); }
+
+    /* CONTENT */
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem) clamp(3rem, 8vw, 5rem);
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: clamp(1.5rem, 4vw, 2.2rem);
+      transition: border-color 0.2s;
+    }
+
+    .section:hover {
+      border-color: var(--accent);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      padding-top: 4px;
+    }
+
+    p, li {
+      font-size: 0.93rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    p + p { margin-top: 0.75rem; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    li::before {
+      content: '→';
+      color: var(--accent);
+      margin-right: 0.5rem;
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    a:hover { border-color: var(--accent); }
+
+    .highlight-box {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 1rem 1.2rem;
+      margin-top: 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 5vw, 3rem);
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* FADE IN */
+    .section {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+    .section:nth-child(1)  { animation-delay: 0.05s; }
+    .section:nth-child(2)  { animation-delay: 0.10s; }
+    .section:nth-child(3)  { animation-delay: 0.15s; }
+    .section:nth-child(4)  { animation-delay: 0.20s; }
+    .section:nth-child(5)  { animation-delay: 0.25s; }
+    .section:nth-child(6)  { animation-delay: 0.30s; }
+    .section:nth-child(7)  { animation-delay: 0.35s; }
+    .section:nth-child(8)  { animation-delay: 0.40s; }
+    .section:nth-child(9)  { animation-delay: 0.45s; }
+    .section:nth-child(10) { animation-delay: 0.50s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      .section { padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="#">
+      <img class="nav-logo" src="/logo.png"
+           onerror="this.style.display='none'; document.querySelector('.nav-fallback').style.display='flex';"
+           alt="Attendis Logo" />
+      <div class="nav-fallback" style="display:none; width:36px; height:36px; background:var(--accent-soft); border-radius:8px; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-weight:800; font-size:1rem; color:var(--accent);">A</div>
+      <span class="nav-title">Attendis</span>
+    </a>
+  </nav>
+
+  <div class="hero">
+    <div class="badge">Legal</div>
+    <h1>Privacy <span>Policy</span></h1>
+    <p style="color:var(--muted); font-size:0.95rem; max-width:560px;">
+      At Auronix, we take your privacy seriously. This policy explains what data Attendis collects, why we collect it, and how it's protected.
+    </p>
+    <div class="hero-meta">
+      App: <span>Attendis</span> &nbsp;·&nbsp;
+      Developer: <span>Auronix</span> &nbsp;·&nbsp;
+      Effective Date: <span id="eff-date"></span> &nbsp;·&nbsp;
+      Last Updated: <span id="upd-date"></span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📋</div>
+        <h2>Overview</h2>
+      </div>
+      <p>Attendis is a self-attendance tracking application developed by <strong>Auronix</strong>. The app allows users to record and manage their own attendance logs, which are time-stamped and stored for personal reference. This Privacy Policy applies to the Attendis mobile application available on the Google Play Store.</p>
+      <p>By using Attendis, you agree to the collection and use of information as described in this policy. If you do not agree, please discontinue use of the app.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📦</div>
+        <h2>Information We Collect</h2>
+      </div>
+      <p>Attendis does <strong>not</strong> collect or transmit your personal data to any server. All data you generate stays on your device. The only information involved is:</p>
+      <ul>
+        <li><strong>Attendance Records:</strong> Check-in and check-out times you log — stored locally on your device only, never uploaded anywhere.</li>
+        <li><strong>Exported Excel Files:</strong> Monthly attendance sheets saved to your device's Downloads folder on your request — never uploaded or shared by the app.</li>
+        <li><strong>Ad Identifiers:</strong> Anonymous device-level identifiers used by Google AdMob for serving ads (see Advertising section below).</li>
+        <li><strong>App Version Data:</strong> The app reads version info and a Play Store URL from Firebase — no user data is involved in this exchange.</li>
+      </ul>
+      <div class="highlight-box">
+        We do not collect your name, email, phone number, location, or any personally identifiable information. No user-generated data ever leaves your device.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔥</div>
+        <h2>Firebase Usage</h2>
+      </div>
+      <p>Attendis uses <strong>Firebase Realtime Database</strong> in a very limited, read-only capacity. It is <strong>not</strong> used to store any user data. Firebase is used solely for:</p>
+      <ul>
+        <li><strong>App version checking:</strong> The app reads the latest version number from Firebase to notify you when an update is available.</li>
+        <li><strong>Play Store URL:</strong> The app fetches the Play Store link from Firebase to direct you to the update page when needed.</li>
+      </ul>
+      <div class="highlight-box">
+        No attendance records, personal information, or any user-generated data is ever sent to or stored in Firebase. All your data lives exclusively on your device.
+      </div>
+      <p style="margin-top:0.9rem;">Firebase may collect basic diagnostic information per Google's own policies. See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy →</a></p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📁</div>
+        <h2>Local File Storage</h2>
+      </div>
+      <p>When you export your attendance records, Attendis saves an Excel file directly to your device's <strong>Downloads</strong> folder. This file:</p>
+      <ul>
+        <li>Is stored only on your device and is never uploaded to our servers.</li>
+        <li>Can be deleted at any time from your device's file manager.</li>
+        <li>Requires the <code>WRITE_EXTERNAL_STORAGE</code> or <code>READ_MEDIA_DOCUMENTS</code> permission depending on your Android version.</li>
+        <li>Is accessible by other apps that have storage permissions on your device.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📢</div>
+        <h2>Advertising (Google AdMob)</h2>
+      </div>
+      <p>Attendis displays advertisements served by <strong>Google AdMob</strong>. AdMob may collect and use data to show you relevant ads, which may include:</p>
+      <ul>
+        <li>Advertising ID (GAID) — a resettable, anonymous device identifier.</li>
+        <li>Approximate location data (if permitted by your device settings).</li>
+        <li>Interaction data with ads (impressions, clicks).</li>
+        <li>Device information (model, OS version, language).</li>
+      </ul>
+      <p style="margin-top:0.9rem;">AdMob's data collection is governed by Google's privacy policy. You can opt out of personalized ads by visiting your device's <strong>Settings → Google → Ads → Opt out of Ads Personalization</strong>.</p>
+      <p>For more details, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy →</a> and <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob Data Usage →</a></p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔐</div>
+        <h2>Data Security</h2>
+      </div>
+      <p>We take reasonable measures to protect the data handled by Attendis:</p>
+      <ul>
+        <li>All your attendance data is stored locally on your device — it never touches our servers.</li>
+        <li>Firebase is only used for read-only version checks, communicated over HTTPS/TLS encryption.</li>
+        <li>We do not store any user credentials, passwords, or sensitive information on any server.</li>
+        <li>Locally stored data and exported Excel files are protected by your device's own storage permissions.</li>
+      </ul>
+      <div class="highlight-box">
+        Since we don't store your personal data on any server, the risk of a data breach affecting your attendance records is effectively zero.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🤝</div>
+        <h2>Third-Party Services</h2>
+      </div>
+      <p>Attendis integrates with the following third-party services. Each operates under its own privacy policy:</p>
+      <ul>
+        <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Firebase</a> — Used only to check for app updates and fetch the Play Store URL. No user data is stored.</li>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google AdMob</a> — In-app advertising.</li>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a> — App distribution and system-level services.</li>
+      </ul>
+      <p style="margin-top:0.75rem;">We do not sell, trade, or share your data with any other third parties.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔔</div>
+        <h2>Local Notifications</h2>
+      </div>
+      <p>Attendis uses <strong>local notifications</strong> to remind you to record your attendance at scheduled times. These notifications are:</p>
+      <ul>
+        <li>Triggered entirely on-device based on times you configure — no data is sent to any server to schedule them.</li>
+        <li>Not linked to any personal identity or account.</li>
+        <li>Only active when you grant the app notification permission on your device.</li>
+        <li>Manageable at any time via your device's <strong>Settings → Apps → Attendis → Notifications</strong>.</li>
+      </ul>
+      <div class="highlight-box">
+        No notification content or scheduling data ever leaves your device. Everything is handled locally by the Android notification system.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">⚖️</div>
+        <h2>Your Rights</h2>
+      </div>
+      <p>Depending on your location, you may have the right to:</p>
+      <ul>
+        <li>Opt out of personalized advertising via your Android device settings.</li>
+        <li>Delete locally saved Excel files directly from your device.</li>
+      </ul>
+      <p style="margin-top:0.75rem;">To exercise any of these rights, contact us at the email provided below.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔄</div>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date. We encourage you to review this page periodically. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">✉️</div>
+        <h2>Contact Us</h2>
+      </div>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please reach out to us:</p>
+      <ul>
+        <li><strong>Company:</strong> Auronix</li>
+        <li><strong>App:</strong> Attendis</li>
+        <li><strong>Email:</strong> <a href="mailto:aurroniixx@gmail.com">aurroniixx@gmail.com</a></li>
+      </ul>
+      <div class="highlight-box">
+        We aim to respond to all privacy-related inquiries within 7 business days.
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div>
+      <div class="footer-brand">Attendis · Auronix</div>
+      <div class="footer-copy" style="margin-top:4px;">© <span id="year"></span> Auronix. All rights reserved.</div>
+    </div>
+    <div class="footer-copy">This policy is effective as of <span id="eff-date-footer"></span></div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      document.getElementById('theme-icon').textContent = next === 'dark' ? '☀️' : '🌙';
+      document.getElementById('theme-label').textContent = next === 'dark' ? 'Light' : 'Dark';
+    }
+
+    const now = new Date();
+    const fmt = d => d.toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+    const dateStr = fmt(now);
+    document.getElementById('eff-date').textContent = dateStr;
+    document.getElementById('upd-date').textContent = dateStr;
+    document.getElementById('eff-date-footer').textContent = dateStr;
+    document.getElementById('year').textContent = now.getFullYear();
+  </script>
+
+</body>
+</html>
